@@ -7,7 +7,7 @@ class Console {
 
 	public static function write($text, $color = null){
 		if($color == null){
-			return $text;
+			return print $text;
 		}
 		return print "\033[".$color."m" . $text . "\033[37m";
 	}
