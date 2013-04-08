@@ -21,6 +21,17 @@ class Console {
 		Console::writeLine($title, $color);
 		Console::writeLine("---------------------------", $color);
 	}
+
+	public static function newLine(){
+		return Console::write("\n");
+	}
+
+	public static function input($prompt, $color = null){
+		Console::write($prompt, $color);
+		$finput = fopen ("php://stdin","r");
+		$input = fgets($finput);	
+		return str_replace("\n", "", $input);
+	}
 }
 
 class ConsoleColor {
